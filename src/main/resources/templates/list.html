@@ -16,10 +16,8 @@
     <a href="?lang=en" class="btn btn-outline-secondary">🇬🇧 English</a>
 </div>
 
-<!-- Thông báo Flash -->
 <div th:if="${message}" class="alert alert-info" th:text="${message}"></div>
 
-<!-- Nút thêm mới -->
 <a th:href="@{/add}" class="btn btn-primary mb-3" th:text="#{form.add}">Thêm mới</a>
 
 <!-- Bảng danh sách -->
@@ -40,7 +38,7 @@
         <td th:text="${todo.content}"></td>
         <td th:text="${todo.dueDate}"></td>
 
-        <!-- Trạng thái - tách th:text và th:class riêng, dùng th:switch -->
+
         <td>
             <span th:class="${todo.status.name() == 'COMPLETED' ? 'badge bg-success' :
                              (todo.status.name() == 'IN_PROGRESS' ? 'badge bg-warning text-dark' :
@@ -53,7 +51,6 @@
             </span>
         </td>
 
-        <!-- Độ ưu tiên - tách th:text và th:class riêng, dùng th:switch -->
         <td>
             <span th:class="${todo.priority.name() == 'HIGH' ? 'badge bg-danger' :
                              (todo.priority.name() == 'MEDIUM' ? 'badge bg-info text-dark' :
